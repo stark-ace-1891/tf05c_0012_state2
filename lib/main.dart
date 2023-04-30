@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  Laptop pepito = Laptop("HP", "Negro");
-  Laptop daniel = Laptop("Asus", "Azul");
-  Laptop julio = Laptop("HP", "Verde");
-
-  print(pepito.marca);
-  print(daniel.marca);
-  print(julio.marca);
+  Laptop pepito = Laptop("Asus", "Azul");
+  print(pepito);
+  print(pepito.color);
+  pepito.encender();
 
   runApp(
     MaterialApp(
-      color: Colors.redAccent,
+      home: Scaffold(
+        backgroundColor: Colors.redAccent,
+      ),
     ),
   );
 }
@@ -25,4 +24,7 @@ class Laptop {
   Laptop(this.marca, this.color);
 
   //Metodos
+  void encender() {
+    print("Encendiendo Laptop");
+  }
 }
