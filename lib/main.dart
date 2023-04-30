@@ -32,6 +32,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<int> aux = [100, 200, 300];
+    List<int> numeros = [1, 2, 3, 4, ...aux, 1000];
+    print(numeros);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo,
@@ -40,9 +43,18 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body: Column(
-        // children: items,
-        children:
-            List.generate(nombres.length, (index) => Text(nombres[index])),
+        children: [
+          Text("Inicio de la lista"),
+          Text("Inicio de la lista"),
+          Text("Inicio de la lista"),
+          ...List.generate(
+            nombres.length,
+            (index) => Text(
+              nombres[index],
+            ),
+          ),
+          Text("Fin de la lista"),
+        ],
       ),
     );
   }
