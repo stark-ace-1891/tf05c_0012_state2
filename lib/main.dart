@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tf05c_0012_state2/person.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,33 +16,52 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   List<String> nombres = [
-    "Carlos",
     "Cesar",
-    "Alana",
-    "Diego",
-    "Carlos",
     "Cesar",
-    "Alana",
-    "Diego",
+    "Cesar",
+    "Cesar",
   ];
-  List<Widget> items = [
-    Icon(Icons.people),
-    Text("Hola"),
-    Text("Daniel"),
+
+  // List<Map> people = [
+  //   {
+  //     "name": "Juan Tapia",
+  //     "address": "Av. Lima 123",
+  //     "image": "http:....",
+  //     "birthDatw": "12/12/1995",
+  //   },
+  //   {
+  //     "name": "Luis Montes",
+  //     "address": "Av. Lima 123",
+  //     "image": "http:....",
+  //     "birthDatw": "12/12/1994",
+  //   },
+  //   {
+  //     "name": "Roxana Maldonado",
+  //     "address": "Av. Duran 123",
+  //     "image": "http:....",
+  //     "birthDatw": "12/12/1997",
+  //   },
+  // ];
+  List<Person> people = [
+    Person(
+        name: "Juan Tapia",
+        address: "Av. Lima 123",
+        image: "http:....",
+        birthDatw: "12/12/1995"),
+    Person(
+        name: "Luis Montes",
+        address: "Av. Lima 123",
+        image: "http:....",
+        birthDatw: "12/12/1994"),
+    Person(
+        name: "Roxana Maldonado",
+        address: "Av. Duran 123",
+        image: "http:....",
+        birthDatw: "12/121997"),
   ];
 
   @override
   Widget build(BuildContext context) {
-    // List<int> aux = [100, 200, 300];
-    // List<int> numeros = [1, 2, 3, 4, ...aux, 1000];
-    // print(numeros);
-    List<int> numeros = [1, 3, 4, 5];
-    //Devuelve una coleccion generica
-    // print(numeros.map((mandarina) => "Hola"));
-
-    //Devuelve una lista
-    print(numeros.map((mandarina) => "Hola").toList());
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo,
@@ -49,33 +69,16 @@ class HomePage extends StatelessWidget {
           "Listado General",
         ),
       ),
-      // body: Column(
-      //   children: [
-      //     Text("Inicio de la lista"),
-      //     Text("Inicio de la lista"),
-      //     Text("Inicio de la lista"),
-      //     ...List.generate(
-      //       nombres.length,
-      //       (index) => Text(
-      //         nombres[index],
-      //       ),
-      //     ),
-      //     Text("Fin de la lista"),
-      //   ],
-      // ),
       body: Column(
         children: [
-          Text("Inicio de la lista"),
-          // ...nombres
-          //     .map(
-          //       (String e) => Text(e),
-          //     )
-          //     .toList(),
-          ...nombres.map((String e) {
-            //Aqui podemos poner mas lineas de codigo
-            return Text(e);
-          }).toList(),
-          Text("Fin de la lista"),
+          ...people
+              .map(
+                (Person e) => ListTile(
+                  title: Text(e.name),
+                  subtitle: Text("Hola de nuevo"),
+                ),
+              )
+              .toList(),
         ],
       ),
     );
