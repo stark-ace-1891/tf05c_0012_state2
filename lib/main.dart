@@ -5,9 +5,45 @@ void main() {
     color: "Azus",
     marca: "Azul",
   );
+  Laptop juan = Laptop(
+    color: "Azus",
+    marca: "Azul",
+  );
   print(pepito);
   print(pepito.color);
-  pepito.encender();
+
+  // List<Laptop> laptops = [
+  //   pepito,
+  //   juan,
+  //   Laptop(
+  //     color: "Azus",
+  //     marca: "Dell",
+  //   )
+  // ];
+
+  List<Laptop> laptops = [];
+  List<int> numeros = [10, 20, 30, 40];
+
+  laptops.add(pepito);
+  laptops.add(juan);
+  laptops.add(Laptop(
+    color: "Azus",
+    marca: "Dell",
+  ));
+
+  print(laptops);
+
+  for (int item in numeros) {
+    print(item + 1000);
+  }
+
+  numeros.forEach((element) {
+    print(element);
+  });
+
+  laptops.forEach((item) {
+    print(item.marca);
+  });
 
   runApp(
     MaterialApp(
