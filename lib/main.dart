@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  Laptop pepito = Laptop();
-  Laptop daniel = Laptop();
-  Laptop julio = Laptop();
-
-  pepito.marca = "Asus";
+  Laptop pepito = Laptop("HP", "Negro");
+  Laptop daniel = Laptop("Asus", "Azul");
+  Laptop julio = Laptop("HP", "Verde");
 
   print(pepito.marca);
   print(daniel.marca);
@@ -20,8 +18,11 @@ void main() {
 
 class Laptop {
   //Atributos
-  String marca = "HP";
-  String color = "Negro";
+  String marca;
+  String color;
+
+  //Constructor
+  Laptop(this.marca, this.color);
 
   //Metodos
 }
