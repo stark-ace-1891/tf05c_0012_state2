@@ -32,9 +32,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<int> aux = [100, 200, 300];
-    List<int> numeros = [1, 2, 3, 4, ...aux, 1000];
-    print(numeros);
+    // List<int> aux = [100, 200, 300];
+    // List<int> numeros = [1, 2, 3, 4, ...aux, 1000];
+    // print(numeros);
+    List<int> numeros = [1, 3, 4, 5];
+    print(numeros.map((mandarina) => "Hola"));
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo,
