@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  Laptop pepito = Laptop("Asus", "Azul");
+  Laptop pepito = Laptop(
+    color: "Azus",
+    marca: "Azul",
+  );
   print(pepito);
   print(pepito.color);
   pepito.encender();
@@ -21,7 +24,7 @@ class Laptop {
   String color;
 
   //Constructor
-  Laptop(this.marca, this.color);
+  Laptop({required this.marca, required this.color});
 
   //Metodos
   void encender() {
