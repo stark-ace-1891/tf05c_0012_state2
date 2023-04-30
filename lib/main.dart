@@ -12,15 +12,6 @@ void main() {
   print(pepito);
   print(pepito.color);
 
-  // List<Laptop> laptops = [
-  //   pepito,
-  //   juan,
-  //   Laptop(
-  //     color: "Azus",
-  //     marca: "Dell",
-  //   )
-  // ];
-
   List<Laptop> laptops = [];
   List<int> numeros = [10, 20, 30, 40];
 
@@ -45,6 +36,8 @@ void main() {
     print(item.marca);
   });
 
+  Telefono miTelefono = Telefono(marca: "Motorola", numero: 9696585852);
+
   runApp(
     MaterialApp(
       home: Scaffold(
@@ -66,4 +59,10 @@ class Laptop {
   void encender() {
     print("Encendiendo Laptop");
   }
+}
+
+class Telefono {
+  String marca;
+  int numero;
+  Telefono({required this.marca, required this.numero});
 }
