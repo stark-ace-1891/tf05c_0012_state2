@@ -14,6 +14,18 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
+  List<String> nombres = [
+    "Carlos",
+    "Cesar",
+    "Alana",
+    "Diego",
+  ];
+  List<Widget> items = [
+    Icon(Icons.people),
+    Text("Hola"),
+    Text("Daniel"),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +36,13 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body: Column(
-        children: [],
+        // children: items,
+        children: [
+          Text(nombres[0]),
+          Text(nombres[1]),
+          Text(nombres[2]),
+          Text(nombres[3]),
+        ],
       ),
     );
   }
