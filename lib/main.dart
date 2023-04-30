@@ -36,7 +36,11 @@ class HomePage extends StatelessWidget {
     // List<int> numeros = [1, 2, 3, 4, ...aux, 1000];
     // print(numeros);
     List<int> numeros = [1, 3, 4, 5];
-    print(numeros.map((mandarina) => "Hola"));
+    //Devuelve una coleccion generica
+    // print(numeros.map((mandarina) => "Hola"));
+
+    //Devuelve una lista
+    print(numeros.map((mandarina) => "Hola").toList());
 
     return Scaffold(
       appBar: AppBar(
@@ -45,19 +49,26 @@ class HomePage extends StatelessWidget {
           "Listado General",
         ),
       ),
+      // body: Column(
+      //   children: [
+      //     Text("Inicio de la lista"),
+      //     Text("Inicio de la lista"),
+      //     Text("Inicio de la lista"),
+      //     ...List.generate(
+      //       nombres.length,
+      //       (index) => Text(
+      //         nombres[index],
+      //       ),
+      //     ),
+      //     Text("Fin de la lista"),
+      //   ],
+      // ),
       body: Column(
-        children: [
-          Text("Inicio de la lista"),
-          Text("Inicio de la lista"),
-          Text("Inicio de la lista"),
-          ...List.generate(
-            nombres.length,
-            (index) => Text(
-              nombres[index],
-            ),
-          ),
-          Text("Fin de la lista"),
-        ],
+        children: nombres
+            .map(
+              (String e) => Text(e),
+            )
+            .toList(),
       ),
     );
   }
