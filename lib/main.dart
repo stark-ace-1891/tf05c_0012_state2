@@ -19,6 +19,10 @@ class HomePage extends StatelessWidget {
     "Cesar",
     "Alana",
     "Diego",
+    "Carlos",
+    "Cesar",
+    "Alana",
+    "Diego",
   ];
   List<Widget> items = [
     Icon(Icons.people),
@@ -37,12 +41,8 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
         // children: items,
-        children: [
-          Text(nombres[0]),
-          Text(nombres[1]),
-          Text(nombres[2]),
-          Text(nombres[3]),
-        ],
+        children:
+            List.generate(nombres.length, (index) => Text(nombres[index])),
       ),
     );
   }
