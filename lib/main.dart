@@ -66,11 +66,15 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           Text("Inicio de la lista"),
-          ...nombres
-              .map(
-                (String e) => Text(e),
-              )
-              .toList(),
+          // ...nombres
+          //     .map(
+          //       (String e) => Text(e),
+          //     )
+          //     .toList(),
+          ...nombres.map((String e) {
+            //Aqui podemos poner mas lineas de codigo
+            return Text(e);
+          }).toList(),
           Text("Fin de la lista"),
         ],
       ),
